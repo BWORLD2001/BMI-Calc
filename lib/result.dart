@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'homepage.dart';
 
@@ -29,7 +28,7 @@ class _ResultPageState extends State<ResultPage> {
           ),
           const SizedBox(height: 20),
           Container(
-             width: MediaQuery.of(context).size.width,
+            width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               color: const Color.fromARGB(104, 65, 61, 88),
               borderRadius: BorderRadius.circular(10),
@@ -37,7 +36,7 @@ class _ResultPageState extends State<ResultPage> {
             child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: Column(children: [
-                 Text(
+                Text(
                   status(),
                   style: const TextStyle(
                     color: Colors.green,
@@ -57,7 +56,8 @@ class _ResultPageState extends State<ResultPage> {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  determine(),textAlign: TextAlign.center,
+                  determine(),
+                  textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
@@ -83,7 +83,7 @@ class _ResultPageState extends State<ResultPage> {
                       MaterialPageRoute(builder: (_) => const Homepage()));
                 },
                 child: const Text(
-                  'RE-CALCULAT',
+                  'RE-CALCULATE',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 25,
@@ -100,27 +100,31 @@ class _ResultPageState extends State<ResultPage> {
   String determine() {
     if (double.parse(widget.result) < 18.5) {
       return 'Your BMI shows you are under weight. Try to add more weight';
-    }  else if (double.parse(widget.result) > 18.5 && double.parse(widget.result) < 25.0)  {
+    } else if (double.parse(widget.result) > 18.5 &&
+        double.parse(widget.result) < 25.0) {
       return '  Good!!!. Your BMI shows that you have a normal weight. Countinue the excercise';
-    }else if( double.parse(widget.result) > 24.9 && double.parse(widget.result) < 30) {
-        return 'Your BMI shows you are Over weight. Try to loss more weight';
-    } else if(  double.parse(widget.result) > 29.9){
-          return 'Your BMI shows you are OBESE. Try to loss weight.Do more excercise';
-    }else{
+    } else if (double.parse(widget.result) > 24.9 &&
+        double.parse(widget.result) < 30) {
+      return 'Your BMI shows you are Over weight. Try to loss more weight';
+    } else if (double.parse(widget.result) > 29.9) {
+      return 'Your BMI shows you are OBESE. Try to loss weight.Do more excercise';
+    } else {
       return '';
     }
   }
 
-   String status() {
-    if (double.parse(widget.result)< 18.5 ) {
+  String status() {
+    if (double.parse(widget.result) < 18.5) {
       return 'Underweight';
-    }  else if (double.parse(widget.result) > 18.5  && double.parse(widget.result) < 25.0 )  {
+    } else if (double.parse(widget.result) > 18.5 &&
+        double.parse(widget.result) < 25.0) {
       return 'Normal or Healthy Weight';
-    }else if( double.parse(widget.result) > 24.9 && double.parse(widget.result) < 30) {
-        return 'Overweight';
-    } else if(  double.parse(widget.result) > 29.9){
-          return 'Obese';
-    }else{
+    } else if (double.parse(widget.result) > 24.9 &&
+        double.parse(widget.result) < 30) {
+      return 'Overweight';
+    } else if (double.parse(widget.result) > 29.9) {
+      return 'Obese';
+    } else {
       return '';
     }
   }

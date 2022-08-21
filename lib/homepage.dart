@@ -9,21 +9,16 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  final _formkey = GlobalKey<FormState>();
   TextEditingController fnum = TextEditingController();
   TextEditingController snum = TextEditingController();
   bool isSwitched = false;
   bool isSwitch = false;
 
-  final _formkey = GlobalKey<FormState>();
-
-  int _counter = 0;
-  int _count = 0;
-
   void _incrementCounter() {
     setState(() {
       double val = double.parse(snum.text);
       val = val + 1;
-
       snum = TextEditingController(text: '$val');
     });
   }
@@ -239,8 +234,7 @@ class _HomepageState extends State<Homepage> {
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
                           width: 2,
-                          color: const Color.fromARGB(255, 212, 210, 210))
-                      ),
+                          color: const Color.fromARGB(255, 212, 210, 210))),
                   child: Column(
                     children: [
                       Row(
@@ -256,8 +250,7 @@ class _HomepageState extends State<Homepage> {
                                   border: Border.all(
                                       width: 2,
                                       color: const Color.fromARGB(
-                                          255, 210, 210, 212))
-                                  ),
+                                          255, 210, 210, 212))),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
@@ -269,7 +262,7 @@ class _HomepageState extends State<Homepage> {
                                         setState(
                                           () {
                                             isSwitched = value;
-                                            print(isSwitched);
+                                            debugPrint('$isSwitched');
                                           },
                                         );
                                       },
@@ -284,17 +277,13 @@ class _HomepageState extends State<Homepage> {
                           )
                         ],
                       ),
-                      const SizedBox(
-                        height: 9
-                      ),
+                      const SizedBox(height: 9),
                       const Text(
                         'Height',
                         style: TextStyle(
                             fontWeight: FontWeight.w600, fontSize: 18),
                       ),
-                      const SizedBox(
-                        height: 20
-                      ),
+                      const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -329,7 +318,7 @@ class _HomepageState extends State<Homepage> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: const [
                                 Text(
-                                  '4\"',
+                                  '4"',
                                   style: TextStyle(
                                       fontSize: 30,
                                       fontWeight: FontWeight.w800),
@@ -353,9 +342,7 @@ class _HomepageState extends State<Homepage> {
                   ),
                   child: Column(
                     children: [
-                      const SizedBox(
-                        height: 20
-                      ),
+                      const SizedBox(height: 20),
                       const Text(
                         "Gender",
                         style: TextStyle(
@@ -386,7 +373,7 @@ class _HomepageState extends State<Homepage> {
                                     setState(
                                       () {
                                         isSwitch = value;
-                                        print(isSwitch);
+                                        debugPrint('$isSwitch');
                                       },
                                     );
                                   },
