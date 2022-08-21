@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'homepage.dart';
 
@@ -30,7 +29,6 @@ class _ResultPageState extends State<ResultPage> {
           ),
           const SizedBox(height: 20),
           Container(
-            // height: 300,
              width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               color: const Color.fromARGB(104, 65, 61, 88),
@@ -40,10 +38,8 @@ class _ResultPageState extends State<ResultPage> {
               padding: const EdgeInsets.all(15.0),
               child: Column(children: [
                  Text(
-                  
                   status(),
                   style: const TextStyle(
-                    
                     color: Colors.green,
                     fontWeight: FontWeight.w700,
                     fontSize: 30,
@@ -85,9 +81,6 @@ class _ResultPageState extends State<ResultPage> {
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (_) => const Homepage()));
-                  // if (_formkey.currentState!.validate()) {
-                  //   setState(() {});
-                  //   func();
                 },
                 child: const Text(
                   'RE-CALCULAT',
@@ -122,7 +115,7 @@ class _ResultPageState extends State<ResultPage> {
     if (double.parse(widget.result)< 18.5 ) {
       return 'Underweight';
     }  else if (double.parse(widget.result) > 18.5  && double.parse(widget.result) < 25.0 )  {
-      return '  Normal or Healthy Weight';
+      return 'Normal or Healthy Weight';
     }else if( double.parse(widget.result) > 24.9 && double.parse(widget.result) < 30) {
         return 'Overweight';
     } else if(  double.parse(widget.result) > 29.9){

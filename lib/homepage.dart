@@ -110,7 +110,6 @@ class _HomepageState extends State<Homepage> {
                                   const TextInputType.numberWithOptions(
                                       decimal: true),
                               controller: fnum,
-                              
                               autovalidateMode:
                                   AutovalidateMode.onUserInteraction,
                               textAlign: TextAlign.center,
@@ -241,13 +240,11 @@ class _HomepageState extends State<Homepage> {
                       border: Border.all(
                           width: 2,
                           color: const Color.fromARGB(255, 212, 210, 210))
-                      // shape: BoxShape.circle,
                       ),
                   child: Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
-                        //crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -260,7 +257,6 @@ class _HomepageState extends State<Homepage> {
                                       width: 2,
                                       color: const Color.fromARGB(
                                           255, 210, 210, 212))
-                                  // shape: BoxShape.circle,
                                   ),
                               child: Row(
                                 mainAxisAlignment:
@@ -289,7 +285,7 @@ class _HomepageState extends State<Homepage> {
                         ],
                       ),
                       const SizedBox(
-                        height: 9,
+                        height: 9
                       ),
                       const Text(
                         'Height',
@@ -297,7 +293,7 @@ class _HomepageState extends State<Homepage> {
                             fontWeight: FontWeight.w600, fontSize: 18),
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 20
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -358,7 +354,7 @@ class _HomepageState extends State<Homepage> {
                   child: Column(
                     children: [
                       const SizedBox(
-                        height: 20,
+                        height: 20
                       ),
                       const Text(
                         "Gender",
@@ -453,10 +449,8 @@ class _HomepageState extends State<Homepage> {
   }
 
   String func() {
-    // double a = double.parse(fnum.text);
     double b = double.parse(snum.text);
     var d = double.parse(fnum.text) * double.parse(fnum.text);
-    // var c = (a * a) / b;
     var c = b / d;
     return '$c'.length > 5 ? '$c'.substring(0, 5) : '$c';
   }
@@ -474,23 +468,4 @@ class _HomepageState extends State<Homepage> {
     snum.dispose();
     super.dispose();
   }
-
-  // func() {
-  //   var a = _count;
-  //   var b = _counter;
-  //   var d = a/100;
-  //   var e = d * d;
-  //   // double a = double.parse(_email.text);
-  //   // double b = double.parse(_pass.text);
-  //   // // var c = (a * a) / b;
-  //   String c = (b / e).toStringAsFixed(3);
-  //   return c;
-  // }
-
-  // @override
-  // void initState() {
-  //   _count = 0;
-  //   _counter = 0;
-  //   super.initState();
-  // }
 }
