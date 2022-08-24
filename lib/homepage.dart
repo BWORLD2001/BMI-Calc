@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:textbmi/result.dart';
 
 class Homepage extends StatefulWidget {
@@ -104,6 +105,11 @@ class _HomepageState extends State<Homepage> {
                               keyboardType:
                                   const TextInputType.numberWithOptions(
                                       decimal: true),
+                              maxLength: 5,
+                              inputFormatters: [
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'[0-9.]')),
+                              ],
                               controller: fnum,
                               autovalidateMode:
                                   AutovalidateMode.onUserInteraction,
@@ -111,10 +117,10 @@ class _HomepageState extends State<Homepage> {
                               style: const TextStyle(
                                   fontSize: 50, fontWeight: FontWeight.w900),
                               validator: (v) {
-                                if (v == '0' || v == '0.0') {
-                                  return 'value cannot be zero';
-                                } else if (v!.isEmpty) {
+                                if (v!.isEmpty) {
                                   return 'Kindly enter your hheight';
+                                } else if (double.parse(v) < 1.0) {
+                                  return 'value cannot be zero/negative';
                                 } else {
                                   return null;
                                 }
@@ -179,11 +185,15 @@ class _HomepageState extends State<Homepage> {
                               textAlign: TextAlign.center,
                               style: const TextStyle(
                                   fontSize: 50, fontWeight: FontWeight.w900),
+                              inputFormatters: [
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'[0-9.]')),
+                              ],
                               validator: (v) {
-                                if (v == '0' || v == "0.0") {
-                                  return 'value cannot be zero';
-                                } else if (v!.isEmpty) {
-                                  return 'Kindly enter your width';
+                                if (v!.isEmpty) {
+                                  return 'Kindly enter your hheight';
+                                } else if (double.parse(v) < 1.0) {
+                                  return 'value cannot be zero/negative';
                                 } else {
                                   return null;
                                 }
