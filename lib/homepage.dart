@@ -205,12 +205,6 @@ class _HomepageState extends State<Homepage> {
                                     borderSide: BorderSide.none),
                               ),
                             ),
-
-                            // Text(
-                            //   '$_counter',
-                            //   style: const TextStyle(
-                            //       fontSize: 50, fontWeight: FontWeight.w900),
-                            // ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
